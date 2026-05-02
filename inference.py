@@ -150,6 +150,9 @@ def main():
                 "latency_seconds": time.perf_counter() - q_start,
             }
 
+        if "expected_standards" in item:
+            output["expected_standards"] = item["expected_standards"]
+
         results.append(output)
         logger.info(
             f"[{i}/{len(queries)}] {qid} → "
